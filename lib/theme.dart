@@ -1,9 +1,33 @@
 import 'package:flutter/material.dart';
 
 class GarboTheme extends ThemeExtension<GarboTheme> {
-  const GarboTheme({required this.backgroundColor});
+  GarboTheme({
+    Color? textColor,
+    Color? textColor2,
+    Color? textSelectedColor,
+    Color? navigationBarBackgroundColor,
+    Color? pageBackgroundColor,
+  })  : textColor = textColor ?? const Color(0xff7d858e),
+        textColor2 = textColor2 ?? const Color(0xffc2cad1),
+        textSelectedColor = textSelectedColor ?? const Color(0xff8c78e6),
+        navigationBarBackgroundColor =
+            navigationBarBackgroundColor ?? const Color(0xff22232e),
+        pageBackgroundColor = pageBackgroundColor ?? const Color(0xff191a23);
 
-  final Color backgroundColor;
+  //全局字体和图标默认颜色
+  final Color textColor;
+
+  //字体和图标2级颜色
+  final Color textColor2;
+
+  //全局字体和图标选中颜色
+  final Color textSelectedColor;
+
+  //导航栏背景颜色
+  final Color navigationBarBackgroundColor;
+
+  //页面背景颜色
+  final Color pageBackgroundColor;
 
   @override
   ThemeExtension<GarboTheme> lerp(
@@ -13,11 +37,31 @@ class GarboTheme extends ThemeExtension<GarboTheme> {
     }
 
     return GarboTheme(
-      backgroundColor: Color.lerp(backgroundColor, other.backgroundColor, t)!,
+      textColor: Color.lerp(textColor, other.textColor, t),
+      textColor2: Color.lerp(textColor2, other.textColor2, t),
+      textSelectedColor:
+          Color.lerp(textSelectedColor, other.textSelectedColor, t),
+      navigationBarBackgroundColor: Color.lerp(
+          navigationBarBackgroundColor, other.navigationBarBackgroundColor, t),
+      pageBackgroundColor:
+          Color.lerp(pageBackgroundColor, other.pageBackgroundColor, t),
     );
   }
 
   @override
-  ThemeExtension<GarboTheme> copyWith({Color? backgroundColor}) =>
-      GarboTheme(backgroundColor: backgroundColor ?? this.backgroundColor);
+  ThemeExtension<GarboTheme> copyWith({
+    Color? textColor,
+    Color? textColor2,
+    Color? textSelectedColor,
+    Color? navigationBarBackgroundColor,
+    Color? pageBackgroundColor,
+  }) =>
+      GarboTheme(
+        textColor: textColor ?? this.textColor,
+        textColor2: textColor2 ?? this.textColor2,
+        textSelectedColor: textSelectedColor ?? this.textSelectedColor,
+        navigationBarBackgroundColor:
+            navigationBarBackgroundColor ?? this.navigationBarBackgroundColor,
+        pageBackgroundColor: pageBackgroundColor ?? this.pageBackgroundColor,
+      );
 }

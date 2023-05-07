@@ -1,21 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:garbo/router.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const GarboApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class GarboApp extends StatefulWidget {
+  const GarboApp({super.key});
 
-  // This widget is the root of your application.
+  @override
+  State<StatefulWidget> createState() => _GarboAppState();
+}
+
+class _GarboAppState extends State<GarboApp> {
+  final GarboRouterDelegate _garboRouterDelegate = GarboRouterDelegate();
+  final GarboRouteInformationParser _garboRouteInformationParser =
+      GarboRouteInformationParser();
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: Container(),
+    return MaterialApp.router(
+      routerDelegate: _garboRouterDelegate,
+      routeInformationParser: _garboRouteInformationParser,
     );
   }
 }
