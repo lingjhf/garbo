@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class TaskPage extends Page {
+class NotificationPage extends Page {
   @override
   Route createRoute(BuildContext context) {
     return MaterialPageRoute(

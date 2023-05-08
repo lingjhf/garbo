@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class MessagePage extends Page {
+class IssuePage extends Page {
   @override
   Route createRoute(BuildContext context) {
     return MaterialPageRoute(
