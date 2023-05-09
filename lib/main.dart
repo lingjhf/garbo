@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:garbo/router.dart';
+import 'package:garbo/theme.dart';
 
 void main() {
   runApp(const GarboApp());
@@ -20,6 +21,9 @@ class _GarboAppState extends State<GarboApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      theme: ThemeData(
+        extensions: <ThemeExtension<dynamic>>{GarboTheme()},
+      ),
       routerDelegate: _garboRouterDelegate,
       routeInformationParser: _garboRouteInformationParser,
     );
