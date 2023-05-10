@@ -7,12 +7,15 @@ class GarboTheme extends ThemeExtension<GarboTheme> {
     Color? textSelectedColor,
     Color? navigationBarBackgroundColor,
     Color? pageBackgroundColor,
+    Color? textButtonOverlayColor,
   })  : textColor = textColor ?? const Color(0xff7d858e),
         textColor2 = textColor2 ?? const Color(0xffc2cad1),
         textSelectedColor = textSelectedColor ?? const Color(0xff8c78e6),
         navigationBarBackgroundColor =
             navigationBarBackgroundColor ?? const Color(0xff22232e),
-        pageBackgroundColor = pageBackgroundColor ?? const Color(0xff191a23);
+        pageBackgroundColor = pageBackgroundColor ?? const Color(0xff191a23),
+        textButtonOverlayColor =
+            textButtonOverlayColor ?? const Color(0x0affffff);
 
   //全局字体和图标默认颜色
   final Color textColor;
@@ -25,6 +28,8 @@ class GarboTheme extends ThemeExtension<GarboTheme> {
 
   //导航栏背景颜色
   final Color navigationBarBackgroundColor;
+
+  final Color textButtonOverlayColor;
 
   //页面背景颜色
   final Color pageBackgroundColor;
@@ -45,6 +50,8 @@ class GarboTheme extends ThemeExtension<GarboTheme> {
           navigationBarBackgroundColor, other.navigationBarBackgroundColor, t),
       pageBackgroundColor:
           Color.lerp(pageBackgroundColor, other.pageBackgroundColor, t),
+      textButtonOverlayColor:
+          Color.lerp(textButtonOverlayColor, other.textButtonOverlayColor, t),
     );
   }
 
