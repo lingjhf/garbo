@@ -19,9 +19,7 @@ class GarboRouterDelegate extends RouterDelegate<PageRoute>
       PageRoute(path: '/', page: const HomePage());
 
   @override
-  Future<void> setNewRoutePath(PageRoute configuration) async {
-    print('new ${configuration.path}');
-  }
+  Future<void> setNewRoutePath(PageRoute configuration) async {}
 
   @override
   Widget build(BuildContext context) {
